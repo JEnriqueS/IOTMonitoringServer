@@ -1,7 +1,7 @@
 from argparse import ArgumentError
 import ssl
-from django.db.models import Avg, Max
-from datetime import date, timedelta, datetime
+from django.db.models import  Max
+from datetime import date, datetime
 from receiver.models import Data, Measurement
 import paho.mqtt.client as mqtt
 import schedule
@@ -45,7 +45,7 @@ def analyze_data():
         city = item['station__location__city__name']
         user = item['station__user__username']
 
-        print("check_value="+item["check_value"])
+        print("check_value="+str(item["check_value"]))
         print("max_value="+max_value)
         if item["check_value"] > max_value:
             alert = True
