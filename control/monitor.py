@@ -51,7 +51,8 @@ def analyze_data():
             alert = True
 
         if alert:
-            message = "ALERT {} {} {}".format(variable, max_value, item["check_value"])
+            varMsg = variable[0:1]
+            message = "ALERT {} {} {}".format(varMsg, max_value, item["check_value"])
             topic = '{}/{}/{}/{}/in'.format(country, state, city, user)
             print(datetime.now(), "Sending alert to {} {}".format(topic, variable))
             client.publish(topic, message)
