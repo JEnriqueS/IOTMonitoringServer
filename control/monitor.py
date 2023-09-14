@@ -45,7 +45,9 @@ def analyze_data():
         city = item['station__location__city__name']
         user = item['station__user__username']
 
-        if item["check_value"] > max_value or item["check_value"] < min_value:
+        print("check_value="+item["check_value"])
+        print("max_value="+max_value)
+        if item["check_value"] > max_value:
             alert = True
 
         if alert:
@@ -105,7 +107,7 @@ def start_cron():
     Inicia el cron que se encarga de ejecutar la función analyze_data cada 5 minutos.
     '''
     print("Iniciando cron...")
-    schedule.every(5).minutes.do(analyze_data)
+    schedule.every(1).minutes.do(analyze_data)
     print("Servicio de control iniciado")
     while 1:
         schedule.run_pending()
