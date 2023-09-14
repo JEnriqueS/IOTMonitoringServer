@@ -46,7 +46,7 @@ def analyze_data():
         user = item['station__user__username']
 
         print("check_value="+str(item["check_value"]))
-        print("max_value="+max_value)
+        print("max_value="+str(max_value))
         if item["check_value"] > max_value:
             alert = True
 
