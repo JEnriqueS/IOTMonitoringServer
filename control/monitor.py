@@ -27,7 +27,7 @@ def analyze_data():
                         'station__location__country') \
         .values('check_value', 'station__user__username',
                 'measurement__name',
-                'measurement__avg_value',
+                'measurement__max_value',
                 'measurement__min_value',
                 'station__location__city__name',
                 'station__location__state__name',
@@ -37,7 +37,7 @@ def analyze_data():
         alert = False
 
         variable = item["measurement__name"]
-        max_value = item["measurement__avg_value"] or 0
+        max_value = item["measurement__max_value"] or 0
         min_value = item["measurement__min_value"] or 0
 
         country = item['station__location__country__name']
