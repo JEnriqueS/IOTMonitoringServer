@@ -21,7 +21,7 @@
 // Intervalo en segundo de las mediciones
 #define MEASURE_INTERVAL 2
 // Duración aproximada en la pantalla de las alertas que se reciban
-#define ALERT_DURATION 15
+#define ALERT_DURATION 5
  
 
 // Declaraciones

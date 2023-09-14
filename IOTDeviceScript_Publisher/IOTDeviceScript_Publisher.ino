@@ -21,7 +21,7 @@
 // Intervalo en segundo de las mediciones
 #define MEASURE_INTERVAL 2
 // Duración aproximada en la pantalla de las alertas que se reciban
-#define ALERT_DURATION 15
+#define ALERT_DURATION 5
  
 
 // Declaraciones
@@ -231,7 +231,7 @@ void displayMessage(String message) {
   if (message.equals("OK")) {
     display.println("    " + message); 
   } else {
-    display.setTextSize(2);
+    display.setTextSize(1);
     display.println(message); 
   }
 }
