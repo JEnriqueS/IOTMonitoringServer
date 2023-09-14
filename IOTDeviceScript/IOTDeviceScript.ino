@@ -456,7 +456,7 @@ void loop() {
 
   String message = checkAlert();
 
-  // measure();
+  measure();
   
   display.clearDisplay();
   display.setCursor(0,0);
